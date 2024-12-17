@@ -21,11 +21,9 @@ const SelectSlot = () => {
   },[]);
 
   useEffect(() => {
-    const res = getDaysInMonth(year, month);
+    // getting the class info of the current month.
     const res1 = getDaysAndInfoOFAMonth(year, month);
-    console.log(res1);
-    console.log("res")
-    dispatch(setDatesList(res1)); // seting the store with datesList according to the values of month and year
+    dispatch(setDatesList(res1)); // setting the store with datesList according to the values of month and year
   }, [year, month]);
 
   return (
