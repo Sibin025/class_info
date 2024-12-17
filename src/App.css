@@ -1,0 +1,46 @@
+.alter-select-arrow {
+  appearance: none; /* For modern browsers */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  background: url("assets/images/down-arrow.svg") no-repeat 90% center; /* Add your custom arrow */
+  background-size: 20px; /* Adjust size of the custom arrow */
+  background-color: white;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(7, 130px); /* 7 columns with 100px width */
+  grid-template-rows: repeat(5, 115px);
+  gap: 5px; /* Optional: space between boxes */
+  /* justify-content: space-between; */
+  align-items: center; /* Center the grid vertically */
+}
+
+.grid-rows-alter {
+  grid-template-rows: repeat(6, 115px);
+}
+
+.writing-vertical{
+  writing-mode: vertical-lr;
+  /* text-orientation: upright; */
+}
+
+
+.hidden-modal{
+  visibility: none;
+  transform: scale(0,0);
+  transition: all .1s;
+}
+
+.show-modal{
+  visibility: visible;
+  transform: scale(1,1);
+}
+
+.fixed{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+}
