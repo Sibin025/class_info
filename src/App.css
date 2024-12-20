@@ -10,15 +10,16 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(7, 130px); /* 7 columns with 100px width */
-  grid-template-rows: repeat(5, 115px);
-  gap: 5px; /* Optional: space between boxes */
+  /* grid-template-columns: repeat(7, 130px); 7 columns with 100px width */
+  grid-template-columns: repeat(7, 13.5%); /* 7 columns with 100px width */
+  grid-template-rows: repeat(5, 120px);
+  gap: 5px; /* Optional: space between boxes 
   /* justify-content: space-between; */
   align-items: center; /* Center the grid vertically */
 }
 
 .grid-rows-alter {
-  grid-template-rows: repeat(6, 115px);
+  grid-template-rows: repeat(6, 120px);
 }
 
 .writing-vertical{

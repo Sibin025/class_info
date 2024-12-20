@@ -4,7 +4,8 @@ const initialState = {
     year: 0,
     month:0,
     datesList:[],
-    selectedClasses:[]
+    selectedClasses:[],
+    isAvailable:true,
 }
 
 export const slotSelectionSlice = createSlice({
@@ -28,12 +29,16 @@ export const slotSelectionSlice = createSlice({
         },
         clearSelectedClasses: (state) =>{
             state.selectedClasses = [];
+        },
+        setisAvailable: (state, action)=> {
+            state.isAvailable = action.payload;
         }
+
     }
 
 })
 
 
-export const { addSeletedClass, removeSeletedClass, setDatesList, setMonth, setYear , clearSelectedClasses} = slotSelectionSlice.actions;
+export const { addSeletedClass, removeSeletedClass, setDatesList, setMonth, setYear , clearSelectedClasses, setisAvailable} = slotSelectionSlice.actions;
 
 export default slotSelectionSlice.reducer;

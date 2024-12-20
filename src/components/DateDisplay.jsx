@@ -11,7 +11,6 @@ const DateDisplay = () => {
 
   const firstDayNum = daysOfWeek.indexOf(datesList[0]?.day); // getting the first day from dates list
   let count = 0;
-  let count1 = 1;
 
   const boxes = Array.from({ length: rows * cols }, (_, index) => {
     // disabling the days before the fist day of current month.
@@ -35,9 +34,6 @@ const DateDisplay = () => {
     }
 
     // listing the the next month days
-    // const num = count1;
-    // count1++;
-    // return <Box key={index + "D"} date={num} isDisabled={true} />;
     return <Box key={index + "D"} isDisabled={true} date={"_"} />
   });
 

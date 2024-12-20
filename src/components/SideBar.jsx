@@ -5,24 +5,11 @@ import x from '../assets/images/X.svg';
 import fb from '../assets/images/fb.svg';
 import { months } from '../constants/constants';
 import MonthShowCard from './MonthShowCard';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleModal } from '../redux/slices/commonDataSlice';
-import { toast} from 'react-toastify';
+import { useSelector } from 'react-redux';
 
 
 const SideBar = () => {
-  const {month:monthNum, selectedClasses } = useSelector((store)=> store.slotSelectData);
-  const dispatch = useDispatch();
-
-  const handleModalOpen = () => {
-    if(selectedClasses?.length < 1){
-      toast.warning("Please select a slot",{autoClose:2500});
-      return;
-    }
-    dispatch(toggleModal());
-  }
-
-
+  const {month:monthNum} = useSelector((store)=> store.slotSelectData);
   return (
     <div className='flex justify-between gap-[10px]'>
         <div className='flex flex-col gap-4 w-full'>
@@ -45,7 +32,7 @@ const SideBar = () => {
                 ))
              }
            </div>
-           <button className='bg-secondary w-full p-4 text-white font-semibold' onClick={handleModalOpen}>Submit</button>
+           <button className='bg-secondary w-full p-4 text-white font-semibold cursor-auto' >For inquiry : +44 123456789</button>
            <div className='flex justify-between items-center'>
              <div className='flex gap-1'>
                <img src={insta} alt="instagram" />
