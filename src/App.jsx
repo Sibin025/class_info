@@ -1,31 +1,15 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SelectSlot from "./Pages/SelectSlot";
+import Home from "./Pages/Home";
 
 // routes for the entrie App
 const router = createBrowserRouter([
   {
     path: "/",
     element:(
-        <SelectSlot/>
+        <Home/>
     ) ,
   },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
-  // {
-  //   path: "/register",
-  //   element: <Register />,
-  // },
-  // {
-  //   path:'/add-new-slot',
-  //   element:(
-  //     <ProtectedRoute>
-  //       <SelectSlot/>
-  //     </ProtectedRoute>
-  //   )
-  // }
 ]);
 
 function App() {
