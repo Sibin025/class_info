@@ -35,7 +35,11 @@ const Home = () => {
       <section className="md:mt-7 md:mx-10">
         <div className="m-2 xs:m6 min-w-[600px] xs:overflow-auto  box-border flex flex-col gap-4">
           <div className="flex justify-between w-full">
-            <h1 className="text-black text-2xl font-bold text-center">OET Grammar </h1>
+            <div className="w-[250px] py-4 bg-[#E8E1E9] h-min">
+              <h1 className="text-black text-2xl font-bold text-center">
+                OET Grammar
+              </h1>
+            </div>
             <div className="flex items-center flex-col gap-3">
               <span className="text-[#3C3C3C] text-4xl font-semibold">
                 Monthly Schedule
