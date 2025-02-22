@@ -7,7 +7,6 @@
   background-color: white;
 }
 
-
 .grid-container {
   display: grid;
   /* grid-template-columns: repeat(7, 130px); 7 columns with 100px width */
@@ -22,26 +21,37 @@
   grid-template-rows: repeat(6, 120px);
 }
 
-.writing-vertical{
+.writing-vertical {
   writing-mode: vertical-lr;
   /* text-orientation: upright; */
 }
 
-
-.hidden-modal{
+.hidden-modal {
   visibility: none;
-  transform: scale(0,0);
-  transition: all .1s;
+  transform: scale(0, 0);
+  transition: all 0.1s;
 }
 
-.show-modal{
+.show-modal {
   visibility: visible;
-  transform: scale(1,1);
+  transform: scale(1, 1);
 }
 
-.fixed{
+.fixed {
   height: 100vh;
   width: 100%;
   overflow: hidden;
   position: fixed;
+}
+
+.section-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1600px) {
+  .section-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }

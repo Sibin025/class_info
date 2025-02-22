@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="md:mt-7 md:mx-10">
+      <section className="md:mt-7 md:mx-10 section-container">
         <div className="m-2 xs:m6 min-w-[600px] xs:overflow-auto  box-border flex flex-col gap-4">
           <div className="flex justify-between w-full">
             <div className="w-[250px] py-4 bg-[#E8E1E9] h-min">
@@ -59,7 +59,7 @@ const Home = () => {
                 <DateDisplay />
               </div>
             ) : (
-              <div className="min-w-[600px] min-h-[300px] xs:w-full  xm:w-2/3 flex-center">
+              <div className="min-w-[600px] min-h-[300px] xs:w-full  xm:w-2/3 flex-center bg-primary">
                 <h1> Not Available</h1>
               </div>
             )}
