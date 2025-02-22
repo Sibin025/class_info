@@ -27,6 +27,12 @@ const MonthChangeSlider = ({ year, month, isAvailable }) => {
   };
 
   const handleNextMonth = () => {
+
+    if (month === currentMonthNum && !isAvailable) {
+      dispatch(setisAvailable(true));
+      return;
+    }
+
     if (month === 11) {
       handleSetMonth(0);
       handleSetYear(year + 1);
@@ -42,6 +48,11 @@ const MonthChangeSlider = ({ year, month, isAvailable }) => {
   };
 
   const handlePrevMonth = () => {
+    if (month === currentMonthNum + 1 && !isAvailable) {
+      dispatch(setisAvailable(true));
+      return;
+    }
+
     if (month === 0 && currentMonthNum === 11) {
       handleSetMonth(11);
       handleSetYear(year - 1);
@@ -71,9 +82,9 @@ const MonthChangeSlider = ({ year, month, isAvailable }) => {
           {months[month] + " " + year}
         </span>
       ) : (
-      <span className="text-[22px] font-semibold text-[#A99BC6]">
-        Not Available
-      </span>
+        <span className="text-[22px] font-semibold text-[#A99BC6]">
+          Not Available
+        </span>
       )}
 
       <span
