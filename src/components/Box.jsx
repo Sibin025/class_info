@@ -1,20 +1,15 @@
 import { useSelector } from "react-redux";
 
 const Box = ({ data, date, isDisabled = false }) => {
-  const haveNightClass =
-    data?.night_class_info !== undefined || data?.night_class_info !== null;
-  const haveMorningClass =
-    data?.morning_class_info !== undefined || data?.morning_class_info !== null;
-
   return (
     <div
-      className={`p-2 w-full h-full flex flex-col text-[#4B4B4B] justify-between bg-tertiary gap-1`}
+      className={`p-2 w-full h-full flex flex-col text-[#4B4B4B] justify-betweengap-1 ${date === '_' ? 'bg-primary' : 'bg-tertiary'}`}
     >
       <div className="font-medium flex flex-col gap-[6px] min-h-[81px]">
         <div className="min-h-[39px]">
           {data?.morning_class_info && (
             <>
-              <h1 className="font-semibold text-[15px]">
+              <h1 className="font-semibold text-[15.5px] leading-[18px]">
                 Day {data?.morning_class_info?.day}
               </h1>
               <p className="text-xs">Morning</p>
@@ -25,7 +20,7 @@ const Box = ({ data, date, isDisabled = false }) => {
         <div className="min-h-[39px]">
           {data?.night_class_info && (
             <>
-              <h1 className="font-semibold text-[15px]">
+              <h1 className="font-semibold text-[15.5px] leading-[18px]">
                 Day {data?.night_class_info?.day}
               </h1>
               <p className="text-xs">Night</p>
@@ -33,7 +28,7 @@ const Box = ({ data, date, isDisabled = false }) => {
           )}
         </div>
       </div>
-      <div className="text-end font-semibold ">{date}</div>
+      <div className="text-end font-semibold">{date}</div>
     </div>
   );
 };

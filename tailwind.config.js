@@ -11,7 +11,7 @@ export default {
         tertiary:"#E2DAFF",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], 
+        sans: ['Inter'], 
         custom: ['"Roboto Mono"', 'monospace'],
       },
       screens: {

@@ -99,8 +99,8 @@ function getInfoOfmonthLessThan30(daysCount, year, month) {
   let nightClassDayCount = 1;
   let morningClassDayCount = 1;
 
-  // let nightClassDayGap = 0;
-  // let morningClassDayGap = 0;
+  let nightClassDayGap = 0;
+  let morningClassDayGap = 0;
 
   let nightBatch = 0;
   let morningBatch = 0;
@@ -141,11 +141,16 @@ function getInfoOfmonthLessThan30(daysCount, year, month) {
     }
 
     if (nightClassDayCount === 8) {
-      nightClassDayCount = 1;
-      nightBatch++;
+      if (nightClassDayGap === 1) {
+        nightClassDayCount = 1;
+        nightBatch++;
+        nightClassDayGap = 0;
+      } else {
+        nightClassDayGap++;
+      }
     }
 
-    if (nightBatch !== 3) {
+    if (nightBatch !== 3 && nightClassDayCount < 8) {
       obj["night_class_info"] = {
         day: nightClassDayCount,
         class: "Night",
@@ -154,19 +159,22 @@ function getInfoOfmonthLessThan30(daysCount, year, month) {
       nightClassDayCount++;
     }
 
-
     if (morningClassDayCount === 8) {
-      morningClassDayCount = 1;
-      morningBatch++;
+      if (morningClassDayGap === 1) {
+        morningClassDayCount = 1;
+        morningBatch++;
+        morningClassDayGap = 0;
+      }else{
+        morningClassDayGap++;
+      }
     }
 
-
-    if (morningBatch !== 3) {
+    if (morningBatch !== 3 && morningClassDayCount < 8) {
       obj["morning_class_info"] = {
         day: morningClassDayCount,
         class: "Morning",
       };
-  
+
       morningClassDayCount++;
     }
 

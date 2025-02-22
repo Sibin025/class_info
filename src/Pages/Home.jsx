@@ -32,33 +32,39 @@ const Home = () => {
 
   return (
     <>
-      <div className="m-2 xs:m6 min-w-[600px] xs:overflow-auto  box-border flex flex-col gap-4">
-        <div className="flex justify-between w-full">
-          <h1 className="text-black text-2xl font-bold">OET Grammar </h1>
-          <div className="flex items-center flex-col gap-3">
-            <span className="text-[#3C3C3C] text-2xl font-semibold">
-              Monthly Schedule
-            </span>
-            <div>
-              <MonthChangeSlider year={year} month={month} isAvailable={isAvailable} />
+      <section className="md:mt-7 md:mx-10">
+        <div className="m-2 xs:m6 min-w-[600px] xs:overflow-auto  box-border flex flex-col gap-4">
+          <div className="flex justify-between w-full">
+            <h1 className="text-black text-2xl font-bold text-center">OET Grammar </h1>
+            <div className="flex items-center flex-col gap-3">
+              <span className="text-[#3C3C3C] text-4xl font-semibold">
+                Monthly Schedule
+              </span>
+              <div>
+                <MonthChangeSlider
+                  year={year}
+                  month={month}
+                  isAvailable={isAvailable}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col xm:flex-row gap-3   xl:gap-6">
+            {isAvailable ? (
+              <div className="min-w-[600px] xs:w-full  xm:w-2/3">
+                <DateDisplay />
+              </div>
+            ) : (
+              <div className="min-w-[600px] min-h-[300px] xs:w-full  xm:w-2/3 flex-center">
+                <h1> Not Available</h1>
+              </div>
+            )}
+            <div className="min-w-[500px] m-auto xs:w-full  xm:w-1/3 mt-7">
+              <SideBar />
             </div>
           </div>
         </div>
-        <div className="flex flex-col xm:flex-row gap-3   xl:gap-6">
-          {isAvailable ? (
-            <div className="min-w-[600px] xs:w-full  xm:w-2/3">
-              <DateDisplay />
-            </div>
-          ) : (
-            <div className="min-w-[600px] min-h-[300px] xs:w-full  xm:w-2/3 flex-center">
-               <h1> Not Available</h1>
-            </div>
-          )}
-          <div className="min-w-[500px] m-auto xs:w-full  xm:w-1/3 mt-7">
-            <SideBar />
-          </div>
-        </div>
-      </div>
+      </section>
     </>
   );
 };

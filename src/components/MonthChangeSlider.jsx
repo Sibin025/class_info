@@ -67,11 +67,11 @@ const MonthChangeSlider = ({ year, month, isAvailable }) => {
         <img src={leftArrow} alt="" />
       </span>
       {isAvailable ? (
-        <span className="text-xl font-semibold text-[#A99BC6]">
+        <span className="text-[22px] font-semibold text-[#A99BC6]">
           {months[month] + " " + year}
         </span>
       ) : (
-      <span className="text-xl font-semibold text-[#A99BC6]">
+      <span className="text-[22px] font-semibold text-[#A99BC6]">
         Not Available
       </span>
       )}
