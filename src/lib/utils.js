@@ -1,6 +1,5 @@
 export const getMonthData = (year, month) => {
   const daysInMonth = new Date(year, month + 1, 0).getDate(); // Get number of days in the month
-  // return getDaysAndInfoOFAMonth(daysInMonth, year, month);
 
   if (daysInMonth >= 30) {
     return getDaysAndInfoOFAMonth(daysInMonth, year, month);
@@ -20,12 +19,11 @@ function getDaysAndInfoOFAMonth(daysCount, year, month) {
   let morningClassDayGap = 0;
 
   for (let day = 1; day <= daysCount; day++) {
-    const date = new Date(year, month, day); // Month is 0-indexed
-    const dayOfWeek = date.toLocaleString("en", { weekday: "long" }); // Get day of the week
+    const dayOfWeek = getTheDayOfWeek(day, year, month);
 
     // setting the basic data of a day.
     const obj = {
-      date: day < 10 ? "0" + day : day,
+      date: formatDate(day),
       month: month,
       year: year,
       day: dayOfWeek,
@@ -106,12 +104,11 @@ function getInfoOfmonthLessThan30(daysCount, year, month) {
   let morningBatch = 0;
 
   for (let day = 1; day <= daysCount; day++) {
-    const date = new Date(year, month, day); // Month is 0-indexed
-    const dayOfWeek = date.toLocaleString("en", { weekday: "long" }); // Get day of the week
+    const dayOfWeek = getTheDayOfWeek(day, year, month);
 
     // setting the basic data of a day.
     const obj = {
-      date: day < 10 ? "0" + day : day,
+      date: formatDate(day),
       month: month,
       year: year,
       day: dayOfWeek,
@@ -164,7 +161,7 @@ function getInfoOfmonthLessThan30(daysCount, year, month) {
         morningClassDayCount = 1;
         morningBatch++;
         morningClassDayGap = 0;
-      }else{
+      } else {
         morningClassDayGap++;
       }
     }
@@ -183,3 +180,12 @@ function getInfoOfmonthLessThan30(daysCount, year, month) {
 
   return days;
 }
+
+const getTheDayOfWeek = (day, year, month) => {
+  const date = new Date(year, month, day); // Month is 0-indexed
+  const dayOfWeek = date.toLocaleString("en", { weekday: "long" }); // Get day of the week
+  return dayOfWeek;
+};
+
+
+const formatDate = (day) => day < 10 ? "0" + day : day;

@@ -27,7 +27,7 @@ const MonthChangeSlider = ({ year, month, isAvailable }) => {
   };
 
   const handleNextMonth = () => {
-
+    // preventing the jump to nxt month when the user accesed the not-availble content
     if (month === currentMonthNum && !isAvailable) {
       dispatch(setisAvailable(true));
       return;
@@ -48,6 +48,7 @@ const MonthChangeSlider = ({ year, month, isAvailable }) => {
   };
 
   const handlePrevMonth = () => {
+    // preventing the jump to nxt month when the user accesed the not-availble content
     if (month === currentMonthNum + 1 && !isAvailable) {
       dispatch(setisAvailable(true));
       return;
